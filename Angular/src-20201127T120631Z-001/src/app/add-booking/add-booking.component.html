@@ -1,0 +1,83 @@
+<div class="bg-img">
+<h3  class="text-center">Add Booking</h3>  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4" >  
+    <div [hidden]="submitted" style="width: 400px;">  
+      <form [formGroup]="bookingsaveform" #savebooking (ngSubmit)="saveBooking(savebooking)">  
+        <div class="form-group">  
+          <label for="movieId">Show Id</label><br>
+          <select formControlName="showId">
+            <option [ngValue]="null" disabled>Select Show Id</option>
+            <option *ngFor="let s of shows" [ngValue]="s">
+             {{ s.id }}
+             </option>
+          </select>
+      </div>
+          <div class="form-group">  
+            <label for="bookingDate">Booking Date</label>  
+              <input type="date" class="form-control"  formControlName="bookingDate" data-toggle="tooltip"   
+                 data-placement="right" title="Enter Booking Date" >  
+              <div class="alert alert-danger" *ngIf = "(BookingDate.touched) && (BookingDate.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="BookingDate.errors.required">Date is required</span>  
+                    <span *ngIf = "BookingDate.errors.minlength">   
+                        MinLength Error   
+                    </span>                     
+                </div>  
+          </div>  
+
+          <div class="form-group">  
+            <label for="noOfSeats">Number of Seats</label>  
+              <input type="text" class="form-control"  formControlName="noOfSeats" data-toggle="tooltip"   
+                 data-placement="right" title="Enter Number of Seats" >  
+              <div class="alert alert-danger" *ngIf = "(NoOfSeats.touched) && (NoOfSeats.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="NoOfSeats.errors.required">Field is Required</span>  
+            </div>  
+          </div>  
+
+          <div class="form-group">  
+            <label for="totalCost">Total Cost</label>  
+              <input type="text" class="form-control"  formControlName="totalCost" data-toggle="tooltip"   
+                 data-placement="right" title="Enter Booking Date" >  
+              <div class="alert alert-danger" *ngIf = "(TotalCost.touched) && (TotalCost.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="TotalCost.errors.required">Field is Required
+
+
+                  </span>  
+            </div>  
+          </div> 
+          
+          <div class="form-group">  
+            <label for="movieId">Customer Id</label><br>
+            <select formControlName="customer">
+              <option [ngValue]="null" disabled>Choose Customer Id</option>
+              <option *ngFor="let c of customers" [ngValue]="c">
+               {{ c.id }}
+
+              </option>
+            </select>
+        </div>
+    
+          <button type="submit" class="btn btn-center btn-success">Submit</button>  
+      </form>  
+  </div>  
+  </div>  
+  <div class="col-sm-4"></div>  
+</div> 
+
+
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4">  
+      <div [hidden]="!submitted">  
+         <h4>Booking Added SuccessFully!</h4>  
+         
+      </div>        
+  </div>  
+  <div class="col-sm-4"></div>
+</div> 
+</div>
+

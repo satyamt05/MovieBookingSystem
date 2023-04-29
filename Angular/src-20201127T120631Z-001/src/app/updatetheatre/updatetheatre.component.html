@@ -1,0 +1,69 @@
+<body>
+<h2> Update Theatre </h2>
+<div class="row">  
+    <div class="col-sm-4"></div>  
+    <div class="col-sm-4" >  
+     <div style="width: 400px;">  
+     <form #formdata="ngForm" (ngSubmit)="searchOneTheatre()">
+        <div class="one">
+        <label> Threatre ID</label>
+        <input type="number" name="TheatreId" placeholder="Enter Theatre Id" data-placement="right" required pattern="[1-9][0-9][0-9][0-9]" required minlength="3" required #idd="ngModel" [(ngModel)]="tid" class="form-control" >
+        <div *ngIf="idd.invalid && idd.touched" class="alert alert-danger">
+        <div *ngIf="idd.errors.required">Theatre ID is Mandatory</div>
+        <div *ngIf="idd.errors.pattern">Theatre ID can have 3 digits with not 0 at first place</div>
+        </div>
+        </div>
+        <div class="two">
+         <input type="submit" value="Search"  class="btn btn-success">
+        </div><br>
+      </form>
+    </div>
+   </div>
+  </div>
+<h3> Edit Theatre Information </h3>
+  <div class="row">  
+    <div class="col-sm-4"></div>  
+     <div class="col-sm-4" >  
+      <div style="width: 400px;">     
+       <form #formdata2="ngForm" (ngSubmit)="updateOneTheatre()">
+        <div class="three">
+           <label> Threatre ID</label>
+           <input type="number" placeholder="Enter Theatre Id" name="id" required pattern="[1-9][0-9][0-9][0-9]" required minlength="3" required #idd="ngModel" data-placement="right" [(ngModel)]="updatedTheatre.id" value={{updatedTheatre.id}}  class="form-control" >
+            <div *ngIf="idd.invalid && idd.touched" class="alert alert-danger">
+            <div *ngIf="idd.errors.required">Theatre ID is Mandatory</div>
+            <div *ngIf="idd.errors.pattern">Theatre ID can have 3 digits with not 0 at first place</div>
+          </div>
+        </div>
+           <div class="four">
+           <label> Threatre Name </label>
+           <input type="text" placeholder="Enter Theatre Name" data-placement="right"  
+             name="name" [(ngModel)]="updatedTheatre.name" value={{updatedTheatre.name}} required minlength="3"  pattern="[a-zA-Z ]*"  required #namee="ngModel" class="form-control" >
+             <div *ngIf="namee.invalid && namee.touched" class="alert alert-danger">
+              <div *ngIf="namee.errors.required">Theatre Name is Mandatory</div>
+              <div *ngIf="namee.errors.pattern">Theatre Name can have 4 digits with not 0 at first place</div>
+              <div *ngIf="namee.errors.pattern">Theatre Name can have alphabets only</div> 
+              </div>
+            </div>
+           <div class="five">
+           <label for="name">City ID</label><br>
+           <select name="city" [(ngModel)]="updatedTheatre.city" value={{updatedTheatre.city}} class="form-control" >
+            <option [ngValue]="null" disabled>Choose your City</option>
+            <option *ngFor="let c of cities" [ngValue]="c">
+                {{ c.id }}
+            </option>
+       </select> 
+
+           <!--<input type="number" placeholder="Enter City Id" data-placement="right" name="city" [(ngModel)]="updatedTheatre.city" required pattern="[1-9][0-9]" required minlength="2" required #citty="ngModel" value={{updatedTheatre.city}} required  class="form-control" >
+           <div *ngIf="citty.invalid && citty.touched" class="alert alert-danger">
+            <div *ngIf="citty.errors.required">City ID is Mandatory</div>
+            <div *ngIf="citty.errors.pattern">City ID can have 2 digits with not 0 at first place</div>
+            </div>-->
+            </div>
+           <div class="six">
+          <input type="submit" value="Update" class="btn btn-success">  
+           </div>
+       </form>
+     </div>
+    </div>
+   </div>
+</body>

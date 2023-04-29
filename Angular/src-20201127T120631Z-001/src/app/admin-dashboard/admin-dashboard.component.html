@@ -1,0 +1,54 @@
+ <div class="bg-img">
+ <div class="container">
+    <div class="jumbotron jumbotron-fluid admind" >
+      <h1 style="text-align: center;">Admin Dashboard</h1>  
+          
+    </div>
+  <div class="container">
+    <div class="panel panel-default">  
+        <div class="panel-body"> 
+            <h2>Select an option</h2>
+            <div class="row"> 
+               <table align="center">
+                   <tr>
+               <td><h3><p ><strong>City</strong></p></h3>
+               <button type="submit" class="btn btn-primary" (click)="routerPage('add-city')">Add City</button> <br><br>
+               <button type="submit" class="btn btn-primary" (click)="routerPage('view-city')">View Cities</button>&nbsp;&nbsp; <br><br>
+            </td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <td>
+                <h3><p ><strong>Theatre</strong></p></h3>
+                <button type="submit" class="btn btn-primary" (click)="routerPage('theatre')">Theatre</button> <br><br>
+                <button type="submit" class="btn btn-primary" (click)="routerPage('screen')">Screen</button> <br><br>
+            </td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <td>
+                <h3><p ><strong>Movie</strong></p></h3>
+                <button type="submit" class="btn btn-primary" (click)="routerPage('add-movie')">Add Movie</button> <br><br>
+                <button type="submit" class="btn btn-primary" (click)="routerPage('view-movie')">View Movies</button> <br><br>
+                <button type="submit" class="btn btn-primary" (click)="routerPage('search-movie')">Search Movie</button> <br><br>
+                <button type="submit" class="btn btn-primary" (click)="routerPage('update-movie')">Update Movie</button> <br><br>
+           </td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <td> 
+             <h3><strong>Show</strong></h3>
+                <button type="submit" class="btn btn-primary" (click)="routerPage('add-show')">Add Show</button> <br><br>
+                <button type="submit" class="btn btn-primary" (click)="routerPage('view-show')">View Shows</button> <br><br>
+                <button type="submit" class="btn btn-primary" (click)="routerPage('search-show')">Search Show</button> <br><br>
+           </td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <td>
+                <h3><strong>Booking</strong></h3>
+                <button type="submit" class="btn btn-primary" (click)="routerPage('add-booking')">Add Booking</button> <br><br>
+                <button type="submit" class="btn btn-primary" (click)="routerPage('view-booking')">View Bookings</button> <br><br>
+                <button type="submit" class="btn btn-primary" (click)="routerPage('view-customer')">View Customer</button> <br><br>
+           </td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           </tr>
+           <tr>
+             <td>
+              <button type="submit" class="btn btn-secondary" (click)="routerPage('homepage')">Back To Home</button> <br><br>
+             </td>
+           </tr>
+           </table>
+            </div>
+            </div>
+            </div>
+  </div>
+  
+</div>

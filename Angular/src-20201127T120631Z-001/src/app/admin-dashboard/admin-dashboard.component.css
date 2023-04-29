@@ -1,0 +1,22 @@
+.bg-img {
+    /* The image used */
+    background-image: url("../../assets/imgb.jpg");
+   
+    min-height: 700px;
+
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
+
+  .btn1{
+    margin-left: 1000;
+    float: right;
+  }
+
+  .admind{
+    background-color:blue !important;
+  }

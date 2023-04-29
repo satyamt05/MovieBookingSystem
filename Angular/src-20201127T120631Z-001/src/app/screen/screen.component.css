@@ -1,0 +1,29 @@
+body{
+  font-size: sans-serif;
+  /* position: fixed; */
+  height: 100%;
+  width: 100%;
+  background: url(/assets/images/movie.png) no-repeat center center fixed;
+  background-size:cover ;
+  background-attachment: initial;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  background-position: center;
+  background-size: cover;
+  }
+  .two{
+    position: initial;
+    padding: 8px;
+  }
+
+  .bg-img {
+    /* The image used */
+    background-image: url("../../assets/imgb.jpg");
+   min-height: 680px;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }

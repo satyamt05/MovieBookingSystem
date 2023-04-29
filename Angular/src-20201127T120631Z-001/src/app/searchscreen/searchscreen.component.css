@@ -1,0 +1,51 @@
+body{
+    font-size: sans-serif;
+    /* position: fixed; */
+    height: 100%;
+    width: 100%;
+    background: url(/assets/image/movie.png) no-repeat center center fixed;
+    background-size:cover ;
+    background-attachment: initial;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-size: cover;
+    }
+    .fourteen{
+     /* border: 3px solid #40ecf1;*/
+      width: 300px;
+      font-size: 20px;
+      padding: 2.5px 2px;
+      margin: 1px 5px;
+      position: initial;
+  
+    }
+    .fifteen{
+  
+      position: absolute;
+      padding: 8px;
+    }
+    h3{
+      margin-left: 6px;
+      font-style: normal;
+      text-align: left;
+      position: inherit;
+      display: inline;
+    }
+    .sixteen{
+    /*  border: 1px solid  rgba(248, 231, 80, 0.74);*/
+      border-width: 1.25px;
+      border-style: solid;
+    }
+    th{
+      background-color: rgba(57, 212, 236, 0.74);
+    }
+    td{
+      background-color:  rgba(248, 252, 255, 0.74);
+    }
+    .notice{
+      position: absolute;
+      left: 10%;
+      top : 40%;
+      width: fit-content; 
+    }

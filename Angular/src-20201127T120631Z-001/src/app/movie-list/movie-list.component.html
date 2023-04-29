@@ -1,0 +1,46 @@
+<div class="bg-img">
+<div class="panel panel-default">  
+    <div class="panel-heading">  
+        <h1 style="text-align: center">Movies</h1><br>  
+        <div class="row" [hidden]="!deleteMessage">  
+               
+                  <div class="col-sm-4"></div>  
+                  <div class="col-sm-4">  
+                          <div class="alert alert-info alert-dismissible">  
+                                  <button type="button" class="close" data-dismiss="alert">×</button>  
+                                  <strong>Movie Data Deleted</strong>  
+                          </div>  
+                  </div>  
+                  <div class="col-sm-4"></div>  
+          </div>             
+      </div>  
+      
+    <div class="panel-body">  
+      <table  class="table table-hover table-sm">
+       
+          <thead class="thead-light">  
+              <tr>  
+                  <th>Movie Id</th>  
+                  <th>Movie Name</th>  
+                  <th>Director</th>  
+                  <th>Language</th>  
+                  <th>Realease Date</th>  
+                  <th>Action</th> 
+
+              </tr>  
+          </thead>  
+          <tbody>  
+               <tr *ngFor="let m of movies ">  
+                  <td>{{m.id}}</td>  
+                  <td>{{m.name}}</td>  
+                  <td>{{m.director}}</td>
+                  <td>{{m.language}}</td>
+                  <td>{{m.releaseDate}}</td>  
+                  <td><button class="btn btn-danger" (click)="deleteMovie(m.id)" >Delete</button>
+                  </td>  
+                </tr>   
+          </tbody><br>  
+      </table>  
+  </div>    
+  </div>
+  </div>

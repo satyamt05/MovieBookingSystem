@@ -1,0 +1,63 @@
+<div class="bg-img">
+<body>
+<h2 style="color:black;">Add Screen</h2>  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4" >  
+    <div [hidden]="submitted" style="width: 400px;">  
+      <form [formGroup]="screensaveform"  #savescreen (ngSubmit)="saveScreen(saveScreen)">  
+        <div class="form-group">
+         <div class="eight">  
+              <label for="id">Screen Id</label>  
+              <input type="text" placeholder="Enter Screen Id" class="form-control"  formControlName="id" data-toggle="tooltip"  data-placement="right" title="Enter Screen Id" >  
+              <div class="alert alert-danger" *ngIf = "(ScreenId.touched) && (ScreenId.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="ScreenId.errors.required">Id is Mandatory</span>  
+                    <span *ngIf = "ScreenId.errors.minlength">Minimum length is 4</span>                     
+                </div>
+             </div> 
+          </div>   
+        <div class="form-group"> 
+         <div class="nine"> 
+            <label for="name">Screen Name</label>  
+            <input type="text" placeholder="Enter Screen Name" class="form-control"  formControlName="name" data-toggle="tooltip"   
+               data-placement="right" title="Enter Screen Name" >  
+            <div class="alert alert-danger" *ngIf = "(ScreenName.touched) && (ScreenName.invalid)"   
+              style="margin-top: 5px;">  
+                <span *ngIf="ScreenName.errors.required">screen Name is Mandatory</span>  
+                  <span *ngIf = "ScreenName.errors.minlength">Minimum length is 2</span>                     
+               </div> 
+             </div>
+         </div>  
+         <div class="form-group">  
+            <div class="ten">
+             <label for="Theatre Id">Theatre Id </label><br>
+             <select formControlName="theatreId" placeholder="Enter Theatre Id">
+             <option [ngValue]="null" disabled>Choose your theatre id</option>
+             <option *ngFor="let t of theatres" [ngValue]="t">
+              {{ t.id }}
+             </option>
+             </select>
+          </div>
+        </div>
+      <div class="twelve">
+       <button type="submit" class="btn btn-success">Submit</button>  
+      </div>
+  </form>  
+ </div>  
+</div>
+
+<div class="col-sm-4"></div>  
+</div>  
+ <div class="row">  
+   <div class="col-sm-4"></div>  
+    <div class="col-sm-4">  
+      <div [hidden]="!submitted">  
+         <h4>Screen Added SuccessFully!</h4>  
+         <button (click)="addScreenForm()" class='btn btn-primary'>Add More Screen</button>
+      </div>        
+    </div> 
+  <div class="col-sm-4"></div>  
+ </div>
+</body>
+</div>

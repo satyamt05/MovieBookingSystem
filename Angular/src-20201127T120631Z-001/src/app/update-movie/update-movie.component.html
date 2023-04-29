@@ -1,0 +1,51 @@
+<div class="bg-img">
+<div class="container">
+    <h2>Update Movie</h2>
+    <div class="row">
+       <div class="col-sm-4"></div>
+       <div class="col-sm-4">
+         <div style="width: 400px;">
+         <form #formdata="ngForm" (ngSubmit)="searchMovie()">
+           <label> Movie Id</label>
+           <input type="text" name="id" placeholder="Enter id" data-placement="right" data-toggle="tooltip" 
+           [(ngModel)]="id" class="form-control">
+           <br>
+           <input type="submit" value="Search" class="btn btn-success">
+         </form>
+         </div>
+       </div>
+    </div>
+ 
+    <h3>Edit Movie Information</h3>
+    <div class="row">
+       <div class="col-sm-4"></div>
+       <div class="col-sm-4">
+           <div style="width: 400px;">
+           <form #formdata2="ngForm" (ngSubmit)="updateMovie()">
+             <label>Movie Id</label>
+             <input type="text" placeholder="Enter id" name="id" data-placement="right" data-toggle="tooltip"
+             [(ngModel)]="updatedMovie.id" value="{{updatedMovie.id}}" class="form-control">
+             <br>
+             <label>Movie Name</label>
+             <input type="text" placeholder="Enter name" name="name" data-placement="right" data-toggle="tooltip"
+             [(ngModel)]="updatedMovie.name" value="{{updatedMovie.name}}" class="form-control">
+             <br>
+             <label>Director</label>
+             <input type="text" placeholder="Enter director" name="director" data-placement="right" data-toggle="tooltip"
+             [(ngModel)]="updatedMovie.director" value="{{updatedMovie.director}}"class="form-control">
+             <br>
+             <label>Language</label>
+             <input type="text" placeholder="Enter language" name="language" data-placement="right" data-toggle="tooltip"
+             [(ngModel)]="updatedMovie.language" value="{{updatedMovie.language}}" class="form-control">
+             <br>
+             <label>Release Date</label>
+             <input type="date" placeholder="Enter date" name="releaseDate" data-placement="right" data-toggle="tooltip"
+             [(ngModel)]="updatedMovie.releaseDate" value="{{updatedMovie.releaseDate}}" class="form-control">
+             <br>
+             <button type="submit" class="btn btn-success">Update</button>
+           </form>
+           </div>
+        </div>
+    </div>
+</div>
+</div>

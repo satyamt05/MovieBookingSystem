@@ -1,0 +1,87 @@
+
+<div class="bg-img">
+<div class="panel panel-default">  
+  <div class="panel-heading">  
+      <h3 style="text-align: center">View Bookings</h3><br>  
+      <div class="row" [hidden]="!deleteMessage">  
+             
+                <div class="col-sm-4"></div>  
+                <div class="col-sm-4">  
+                        <div class="alert alert-info alert-dismissible">  
+                                <button type="button" class="close" data-dismiss="alert">×</button>  
+                                <strong>Booking Cancelled</strong>  
+                        </div>  
+                </div>  
+                <div class="col-sm-4"></div>  
+        </div>
+       <!-- <div>
+        <form [formGroup]="searchform" #searchBooking (ngSubmit)="search(searchBooking)">  
+          <div class="form-group">  
+               <label for="id">Search</label>  
+               <input type="search" class="form-control" formControlName="id">
+               <button class='btn btn-primary'><i class="fa fa-futboll-0">View</i></button>  
+          </div> 
+
+           </form>
+           </div>
+         </div>  -->
+  
+    
+  <div class="panel-body"> 
+    
+      <table  class="table table-hover table-sm table-striped">  
+        <thead>
+            <tr>
+                <th>Booking Id</th>
+                <th>Show Id</th>
+                <th>Booking Date</th>
+                <th>Number of Seats</th>
+                <th>Total Cost</th>
+                <th>Customer Id</th>
+                <th colspan="3">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+         <tr *ngFor="let booking of bookings">
+              <td>{{booking.id}}</td>
+                <td>{{booking.showId.id}}</td>
+                <td>{{booking.bookingDate}}</td>
+                <td>{{booking.noOfSeats}}</td>
+                <td>{{booking.totalCost}}</td>
+                <td *ngIf="booking.customer!=null" else elseBlock>{{booking.customer.id}}</td>
+                <td #elseBlock></td>
+                 <td><button (click)="deleteBooking(booking.id)" class='btn btn-primary'><i class="fa fa-futboll-0">Delete</i></button> 
+                 <!-- &nbsp;&nbsp;<button (click)="viewBooking(booking)" class='btn btn-info' data-toggle="modal" data-target="#myModal">Details</button>   -->
+               </td>
+          </tr>
+               
+          </tbody><br>  
+      </table>  
+  </div>
+</div>
+  <!-- <div class="modal" id="myModal">  
+    <div class="modal-dialog">  
+      <div class="modal-content">  
+           <h3>Booking Details</h3>
+         <!-- Modal body -->  
+           <!-- <div class="modal-body"  >   -->
+           <!-- <div [hidden]="isupdated"></div>-->  
+
+
+          </div>
+           <!-- Modal footer -->  
+          <!-- <div class="modal-footer" >  
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="changeisUpdate()">Close</button>  
+          </div>
+        </div>  
+    </div>  
+  </div> 
+  </div>
+</div>
+
+   
+      
+
+        
+
+ --> -->

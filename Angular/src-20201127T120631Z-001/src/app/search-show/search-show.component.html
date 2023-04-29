@@ -1,0 +1,45 @@
+<div class="bg-img">
+    <div class="row">  
+    <div class="col-md-offset-4 col-md-12" > 
+        <form [formGroup]="form" #searchform (ngSubmit)="searchForm(searchform)" id="form">  
+            <table align="center">  
+                <tr>  
+                    <td> <input type="text" formControlName="id" placeholder="Enter id" class="form-control"> </td>  
+                    <td><button class="btn btn-success hidden-xs">Search</button></td>  
+                </tr>  
+            </table>  
+        </form>  
+    </div>  
+    </div>  
+  
+    <br><br>  
+  
+    <div class="row">  
+        <div class="table-content">  
+        <table class="table table-bordered table-striped table-responsive">  
+            <tr>  
+                <th>Id</th>  
+                <th>Name</th>  
+                <th>Start Time</th> 
+                <th>End Time</th>
+                <th>Available Seat</th>
+                <th>Show Price</th>
+                <th>Screen Id</th>
+                <th>Movie Id</th> 
+            </tr>  
+            <ng-container>   
+                <tr>  
+                    <td>{{show.id}}</td>
+                    <td>{{show.name}}</td>  
+                    <td>{{show.startTime}}</td> 
+                    <td>{{show.endTime}}</td> 
+                    <td>{{show.availableSeats}}</td>
+                    <td>{{show.showPrice}}</td> 
+                    <td>{{show.screenId.id}}</td>
+                    <td>{{show.movieId.id}}</td> 
+                </tr>  
+            </ng-container>  
+        </table>  
+    </div>  
+</div>  
+</div>

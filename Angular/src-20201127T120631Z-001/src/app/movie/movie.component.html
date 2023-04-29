@@ -1,0 +1,62 @@
+<div class="bg-img">
+  <h3 style="text-align: center; padding-top: 10px;">Add Movie</h3>  
+  <div class="row">  
+    <div class="col-sm-4"></div>  
+    <div class="col-sm-4" >  
+      <div [hidden]="submitted" style="width: 400px;">  
+        <form [formGroup]="moviesaveform" #savemovie (ngSubmit)="saveMovie(saveMovie)">
+
+          <div class="form-group">  
+            <label for="name">Movie Name</label>  
+            <input type="text" class="form-control"  formControlName="name" data-toggle="tooltip"   
+               data-placement="right" title="Enter Movie Name" >  
+            <div class="alert alert-danger" *ngIf = "(MovieName.touched) && (MovieName.invalid)"   
+              style="margin-top: 5px;">  
+              <span *ngIf="MovieName.errors.required">Movie Name is required</span>  
+              <span *ngIf = "MovieName.errors.minlength">Movie Name should be of minlength 4</span> 
+            </div>  
+          </div>  
+
+          <div class="form-group">  
+            <label for="director">Director</label>  
+            <input type="text" class="form-control"  formControlName="director" data-toggle="tooltip"   
+               data-placement="right" title="Enter Director Name" >  
+            <div class="alert alert-danger" *ngIf = "(Director.touched) && (Director.invalid)"   
+              style="margin-top: 5px;">  
+              <span *ngIf="Director.errors.required">Movie Director is Required</span>  
+              <span *ngIf ="Director.errors.minlength">Movie Director should be of minlength 4</span> 
+              <span *ngIf = "Director.errors.pattern">Movie Director cannot contain number</span>                
+            </div>  
+          </div>  
+
+    
+          <div class="form-group">  
+            <label for="language">Language</label>  
+            <input type="text" class="form-control" formControlName="language"   
+              data-toggle="tooltip" data-placement="right" title="Enter Language">  
+            <div class="alert alert-danger" *ngIf = "(Language.touched) && (Language.invalid)"   
+              style="margin-top: 5px;">  
+              <span *ngIf="Language.errors.required">Language is Required</span>  
+              <span *ngIf = "Language.errors.minlength">Language should be of minlength 4</span>  
+              <span *ngIf = "Language.errors.pattern">Language cannot contain number</span>                  
+            </div>  
+          </div>  
+    
+          <div class="form-group">  
+            <label for="releaseDate">Release Date</label>  
+            <input type="date" class="form-control" formControlName="releaseDate" data-toggle="tooltip"   
+              data-placement="right" title="Select date">  
+            <div class="alert alert-danger" *ngIf = "(releaseDate.touched) && (releaseDate.invalid)"   
+              style="margin-top: 5px;">  
+              <span *ngIf="releaseDate.errors.required">Release Date is Required</span> 
+              <span *ngIf="releaseDate.errors.pattern">Not Valid Date</span>
+            </div>  
+          </div>
+    
+          <button type="submit" class="btn btn-success">Submit</button>  
+        </form>  
+      </div>  
+    </div>
+
+  </div>
+</div>

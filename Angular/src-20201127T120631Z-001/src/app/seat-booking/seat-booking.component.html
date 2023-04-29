@@ -1,0 +1,29 @@
+
+<div class="bg-img">
+<div class="panel panel-default">  
+    <div class="panel-heading">  
+        <h3 style="text-align: center">View Seats</h3><br>  
+        <div class="col-sm-4"></div>  
+    </div>
+<div class="panel-body"> 
+      
+        <table  class="table table-hover table-sm table-striped">  
+          <thead>
+              <tr>
+                  <th>Seat Number</th>
+                  <th>Status</th>
+                  <th>Booking Id</th>
+              </tr>
+          </thead>
+          <tbody>
+           <tr *ngFor="let seat of seats">
+                <td>{{seat.seatNumber}}</td>
+                  <td>{{seat.seatStatus}}</td>
+                  <td>{{seat.booking.id}}</td>
+            </tr>
+                 
+            </tbody><br>  
+        </table>  
+    </div>
+</div>
+       </div>

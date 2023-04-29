@@ -1,0 +1,78 @@
+body{
+    font-size: sans-serif;
+    /* position: fixed; */
+    height: 100%;
+    width: 100%;
+    background: url(/assets/image/movie.png) no-repeat center center fixed;
+    background-size:cover ;
+    background-attachment: initial;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-size: cover;
+    }
+  
+    h2{
+      margin-left: 6px;
+      font-family: Arial, Helvetica, sans-serif;
+      text-align: left;
+      position: initial;
+      display: inline;
+    }
+    h3{
+      margin-left: 6px;
+      font-style: normal;
+      text-align: left;
+      position: inherit;
+      display: inline;
+    }
+    .one{
+    /*  border: 3px solid #40ecf1;*/
+      width: 300px;
+      font-size: 20px;
+      padding: 2.5px 2px;
+      margin: 1px 5px;
+      position: initial;
+    }
+  .two{
+  
+    position: absolute;
+    padding: 8px;
+    
+  }
+  .three{
+  
+   /* border: 3px solid #40ecf1;*/
+    width: 300px;
+    font-size: 20px;
+    padding: 2.5px 2px;
+    margin: 1px 5px;
+    position: initial;
+  
+  }
+  .four{
+  
+   /* border: 3px solid #40ecf1;*/
+    width: 300px;
+    font-size: 20px;
+    padding: 2.5px 2px;
+    margin: 1px 5px;
+    position: initial;
+  
+  }
+  .five{
+  
+  /*  border: 3px solid #40ecf1;*/
+    width: 300px;
+    font-size: 20px;
+    padding: 2.5px 2px;
+    margin: 1px 5px;
+    position: initial;
+  
+  }
+  
+  .six{
+  
+    position: absolute;
+    padding: 8px;
+  }

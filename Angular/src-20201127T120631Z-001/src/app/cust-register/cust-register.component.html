@@ -1,0 +1,52 @@
+<div class="bg-img">
+
+<body>
+    <h2 style="color:black;"> Register New Customer</h2>
+     <div class="row">  
+        <div class="col-sm-4"></div>  
+        <div class="col-sm-4" >  
+         <div style="width: 400px;">  
+          <form #formdata="ngForm" class="form-horizontal" (ngSubmit)="addCustomer(); formdata.reset()">
+            <div class="eight">
+             <label for="name">Enter Username</label><br>
+              <input type="text"  placeholder="Enter  Name" name="name" [(ngModel)]="cust.name" data-placement="right" required minlength="3" required  pattern="[a-zA-Z ]*" required #namee="ngModel" >
+              <div *ngIf="namee.invalid && namee.touched" class="alert alert-danger">
+                <div *ngIf="namee.errors.required">Customer Name is Mandatory</div>
+                <div *ngIf="namee.errors.minlength">Minimum length is 3 </div>
+                <div *ngIf="namee.errors.pattern">Customer Name can have alphabets only</div>       
+             </div>
+             </div>
+             <div class="ten">
+             <label for="name">Enter Password </label><br>
+             <input type="password" placeholder="Enter password" name="password" [(ngModel)]="cust.password" data-placement="right" required minlength="8" required maxlength="15" required  pattern="^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$" required #pass="ngModel"  >
+             <div *ngIf="pass.invalid && pass.touched" class="alert alert-danger">
+             <div *ngIf="pass.errors.required">Password is required</div>
+             <div *ngIf="pass.errors.pattern">
+                 Password should be 8 characters long.
+                 <br>Password must contain at least one numeric digit and a special character and 1 uppercase character
+       and 1 lowercase character</div></div></div>
+              <div class="eight">
+               <label for="name">Date of Birth</label><br>  
+                <input type="date" placeholder="dd-mm-yyyy" name="dateOfBirth" [(ngModel)]="cust.dateOfBirth"  data-placement="right"  required #datee="ngModel" >
+               <div *ngIf="datee.invalid && datee.touched" class="alert alert-danger">
+                <div *ngIf="datee.errors.required">Date of Birth is required</div>
+            </div>
+              </div>
+
+               <div class="eight">
+                <label for="name">Contact number</label><br>  
+                 <input type="number" placeholder="Enter Contact number" name="Contact" [(ngModel)]="cust.contact"  data-placement="right" required pattern="[6-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]" required minlength="10" required #contact="ngModel"  >
+                 <div *ngIf="contact.invalid && contact.touched" class="alert alert-danger">
+                 <div *ngIf="contact.errors.required">contact is Required</div>
+                 <div *ngIf="contact.errors.pattern">Invalid number</div>
+                </div>
+               </div>
+             <div class="twelve">
+             <input type="submit" value="Register" [disabled]="!formdata.valid"  class="btn btn-success">
+            </div>
+           </form>
+         </div>
+       </div>
+    </div>
+</body>
+</div>

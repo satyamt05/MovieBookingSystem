@@ -1,0 +1,65 @@
+body{
+    font-size: sans-serif;
+    /* position: fixed; */
+    height: 100%;
+    width: 100%;
+    background: url(/assets/image/movie.png) no-repeat center center fixed;
+    background-size:cover ;
+    background-attachment: initial;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-size: cover;
+    }
+  
+  h2{
+    margin-left: 6px;
+    font-family: Arial, Helvetica, sans-serif;
+    position: initial;
+    display: inline;
+  }
+  
+  .eight{
+  
+     /*border: 3px solid #0a8d8d; */
+    width: 300px;
+    font-size: 20px;
+    padding: 2.5px 2px;
+    margin: 1px 5px;
+    position: initial;
+  }
+  .nine{
+  
+  /*  border: 3px solid #40ecf1;*/
+    width: 300px;
+    font-size: 20px;
+    padding: 2.5px 2px;
+    margin: 1px 5px;
+    position: initial;
+  }
+  .ten{
+  
+  /*  border: 3px solid #40ecf1;*/
+    width: 300px;
+    font-size: 20px;
+    padding: 2.5px 2px;
+    margin: 1px 5px;
+    position: initial;
+  }
+  
+  .twelve{
+    position: absolute;
+    padding: 8px;
+  }
+
+  .bg-img {
+    /* The image used */
+    background-image: url("../../assets/imgb.jpg");
+   min-height: 680px;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }

@@ -1,0 +1,61 @@
+<body>
+    <h2> Update Screen </h2>
+     <div class="row">  
+        <div class="col-sm-4"></div>  
+         <div class="col-sm-4" >  
+          <div style="width: 400px;">     
+            <form #formdata="ngForm" (ngSubmit)="searchOneScreen()">
+              <div class="one">
+            <label>Screen ID</label>
+            <input type="number" name="ScreenId" placeholder="Enter Screen Id" [(ngModel)]="sid" data-placement="right"required pattern="[1-9][0-9][0-9][0-9]" required minlength="4" required #idd="ngModel" class="form-control" >
+            <div *ngIf="idd.invalid && idd.touched" class="alert alert-danger">
+              <div *ngIf="idd.errors.required">Screen Number is Mandatory</div>
+              <div *ngIf="idd.errors.pattern">Screen Number can have 4 digits with not 0 at first place</div>
+              </div>
+              </div> 
+              <div class="two">
+            <input type="submit" value="Search"  class="btn btn-success">
+              </div>
+            </form>
+          </div>
+        </div>
+    </div><br><br>
+    <h3> Edit Screen Information </h3>
+    <div class="row">  
+        <div class="col-sm-4"></div>  
+         <div class="col-sm-4" >  
+          <div style="width: 400px;">     
+           <form #formdata2="ngForm" (ngSubmit)="updateOneScreen()">
+            <div class="three">
+             <label>Screen ID</label>
+             <input type="number" placeholder="Enter Screen Id" name="id" data-placement="right" required pattern="[1-9][0-9][0-9][0-9]" required minlength="4" required #idd="ngModel" [(ngModel)]="updatedScreen.id" value={{updatedScreen.id}}  class="form-control" >
+             <div *ngIf="idd.invalid && idd.touched" class="alert alert-danger">
+              <div *ngIf="idd.errors.required">Screen ID is Mandatory</div>
+              <div *ngIf="idd.errors.pattern">Screen ID can have 4 digits with not 0 at first place</div>
+              </div>
+              </div> 
+             <div class="four">
+             <label>Screen Name</label>
+             <input type="text" placeholder="Enter Screen Name" name="name" data-placement="right" [(ngModel)]="updatedScreen.name"  required minlength="2" required #namee="ngModel" value={{updatedScreen.name}}  class="form-control" >
+             <div *ngIf="namee.invalid && namee.touched" class="alert alert-danger">
+              <div *ngIf="namee.errors.required">Theatre Name is Mandatory</div>
+              <div *ngIf="namee.errors.minlength">Minimum length is 2 !</div>      
+             </div>
+             </div>
+             <div class="five">
+             <label>Theatre ID</label>
+             <input type="number" placeholder="Enter Theatre Id" data-placement="right" required pattern="[1-9][0-9][0-9]" required minlength="3" required #theatreIdd="ngModel" name="theatreId" [(ngModel)]="updatedScreen.theatreId.id" value={{updatedScreen.theatreId.id}} class="form-control" >
+             <div *ngIf="theatreIdd.invalid && theatreIdd.touched" class="alert alert-danger">
+              <div *ngIf="theatreIdd.errors.required">Theatre ID is Mandatory</div>
+              <div *ngIf="theatreIdd.errors.pattern">Theatre ID can have 3 digits with not 0 at first place</div>
+             </div>
+             </div>
+             <div class="six">
+            <input type="submit" value="Update" [disabled]="!formdata.valid"  class="btn btn-success">  
+            </div>
+         </form>
+       </div>
+      </div>
+    </div>
+</body>
+    

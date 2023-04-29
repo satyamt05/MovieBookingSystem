@@ -1,0 +1,33 @@
+body{
+    font-size: sans-serif;
+    /* position: fixed; */
+    height: 100%;
+    width: 100%;
+    background: url(/assets/image/movie.png) no-repeat center center fixed;
+    background-size:cover ;
+    background-attachment: initial;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    background-size: cover;
+    }
+    h3{
+      margin-left: 6px;
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      position: initial;
+      display: inline;
+    }
+    .thirteen{
+  
+     /* border: 1px solid  rgba(248, 231, 80, 0.74);*/
+      border-width: 1.25px;
+      border-style: solid;
+    }
+    th{
+       background-color: rgba(80, 229, 240, 0.493);
+      background-color:  rgba(126, 178, 212, 0.74);
+    }
+    td{
+      background-color:  rgba(129, 182, 224, 0.74);
+    }

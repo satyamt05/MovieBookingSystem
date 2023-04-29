@@ -1,0 +1,93 @@
+<div class="bg-img">
+<h4 style="text-align: center;">Add Show</h4>  
+
+<div class="row">  
+  <div class="col-sm-5"></div>  
+  <div class="col-sm-6" >  
+    <div [hidden]="submitted" style="width:550px;">  
+      <form [formGroup]="showsaveform" #saveshow (ngSubmit)="saveShow(saveShow)" id="form">  
+        <div class ="row">
+          <div class="form-group">  
+            <label for="name">Show Name</label>  
+            <input type="text" class="form-control"  formControlName="name" data-toggle="tooltip"   
+               data-placement="right" title="Enter Show Name" >  
+            <div class="alert alert-danger" *ngIf = "(ShowName.touched) && (ShowName.invalid)"   
+              style="margin-top: 3px;">  
+                <span *ngIf="ShowName.errors.required">Show Name is Required</span>  
+                  <span *ngIf = "ShowName.errors.minlength">Show Name should be of minlength 4</span>
+                  <span *ngIf="ShowName.errors.pattern">Show Name cannot contain number</span>                     
+              </div>  
+        </div> 
+      </div>
+        <div class="row"> 
+        <div class="form-group">  
+            <label for="startTime">Start Time</label>  
+            <input type="time" class="form-control"  formControlName="startTime" data-toggle="tooltip"   
+               data-placement="right">  
+            <div class="alert alert-danger" *ngIf = "(StartTime.touched) && (StartTime.invalid)"   
+              style="margin-top: 3px;">  
+                <span *ngIf="StartTime.errors.required">Start time required</span>
+                <span *ngIf="StartTime.errors.pattern">Start Time error</span>
+            </div>  
+        </div> 
+        &nbsp; &nbsp;
+        <div class="form-group">  
+            <label for="endTime">End Time</label>  
+            <input type="time" class="form-control"  formControlName="endTime" data-toggle="tooltip"   
+               data-placement="right">  
+            <div class="alert alert-danger" *ngIf = "(EndTime.touched) && (EndTime.invalid)"   
+              style="margin-top: 3px;">  
+                <span *ngIf="EndTime.errors.required">End time required</span>  
+                <span *ngIf="EndTime.errors.pattern">End Time error</span>                   
+            </div>  
+        </div> 
+      </div>
+        <div class="form-group">  
+            <label for="availableSeats">Available seats</label>  
+            <input type="text" class="form-control" formControlName="availableSeats"   
+              data-toggle="tooltip" data-placement="right" title="Enter Seats">  
+              <div class="alert alert-danger" *ngIf = "(AvailableSeats.touched) && (AvailableSeats.invalid)"   
+              style="margin-top: 3px;">  
+                <span *ngIf="AvailableSeats.errors.required">Available Seats is required</span>  
+                  <span *ngIf = "AvailableSeats.errors.minlength">Available Seat be of minlength 2</span>      
+                  <span *ngIf = "AvailableSeats.errors.pattern">Available Seats should be numeric</span>               
+              </div>  
+        </div> 
+
+        <div class="form-group">  
+            <label for="showPrice">Show Price</label>  
+            <input type="text" class="form-control" formControlName="showPrice"   
+              data-toggle="tooltip" data-placement="right" title="Enter Price">  
+              <div class="alert alert-danger" *ngIf = "(ShowPrice.touched) && (ShowPrice.invalid)"   
+              style="margin-top: 3px;">  
+                <span *ngIf="ShowPrice.errors.required">Show Price is Required</span>  
+                  <span *ngIf = "ShowPrice.errors.minlength">Show Price be of minlength 2</span>  
+                  <span *ngIf = "ShowPrice.errors.pattern">Show Price should be numeric</span>                   
+              </div>  
+        </div> 
+        
+          <div class="form-group">  
+            <label for="screenId">Screen Id &nbsp;</label>
+            <select formControlName="screenId">
+              <option [ngValue]="null" disabled>Choose your screen id</option>
+              <option *ngFor="let s of screens" [ngValue]="s">
+               {{ s.id }}
+              </option>
+            </select>
+        </div>
+    
+          <div class="form-group">  
+              <label for="movieId">Movie Id&nbsp;</label>
+              <select formControlName="movieId">
+                <option [ngValue]="null" disabled>Choose your movie id</option>
+                <option *ngFor="let m of movies" [ngValue]="m">
+                 {{ m.id }}
+                </option>
+              </select>
+          </div>
+          <button type="submit" class="btn btn-success">Submit</button>  
+      </form>  
+  </div>  
+  </div>
+  </div>  
+</div>

@@ -1,0 +1,109 @@
+<div class="bg-img">
+<div class="container">
+    <div class="container">
+        <div class="container"><br><br><br><br>
+<div class="card text-black" style="background-color:lightskyblue">
+    <div class="card-header"><h3 class="text-center"><strong>Enter Booking Details</strong></h3></div>  
+    <div class="card-body">
+        <br><br>
+        <div [hidden]="submitted" style="width: 400px;"> 
+          <form [formGroup]="bookingsaveform" #savebooking (ngSubmit)="saveBooking(savebooking)">  
+              <div class="form-group">  
+                <label for="showId">Show Id</label><br>
+                <select formControlName="showId" [(ngModel)]="show.id" value={{show.id}}>
+                  <option [ngValue]="null" disabled>Select Show Id</option>
+                  <option *ngFor="let s of shows" [ngValue]="s">
+                   {{ s.id }}
+                   </option>
+                </select>
+            </div>
+                <div class="form-group">  
+                  <label for="bookingDate">Booking Date</label>  
+                    <input type="date" class="form-control"  formControlName="bookingDate" data-toggle="tooltip"   
+                       data-placement="right" title="Enter Booking Date" >  
+                    <div class="alert alert-danger" *ngIf = "(BookingDate.touched) && (BookingDate.invalid)"   
+                      style="margin-top: 5px;">  
+                        <span *ngIf="BookingDate.errors.required">Student Name is Required</span>  
+                          <span *ngIf = "BookingDate.errors.minlength">   
+                              MinLength Error   
+                          </span>                     
+                      </div>  
+                </div>  
+      
+                <div class="form-group">  
+                  <label for="noOfSeats">Number of Seats</label>  
+                    <input type="text" class="form-control"  formControlName="noOfSeats" data-toggle="tooltip"   
+                       data-placement="right" title="Enter Number of Seats" >  
+                    <div class="alert alert-danger" *ngIf = "(NoOfSeats.touched) && (NoOfSeats.invalid)"   
+                      style="margin-top: 5px;">  
+                        <span *ngIf="NoOfSeats.errors.required">Field is Required</span>  
+                  </div>  
+                </div>  
+                 <div class="form-group">  
+                  <label for="movieId">Customer Id</label><br>
+                  <select formControlName="customer">
+                    <option [ngValue]="null" disabled>Choose Customer Id</option>
+                    <option *ngFor="let c of customers" [ngValue]="c">
+                     {{ c.id }}
+      
+                    </option>
+                  </select>
+              </div>
+          
+                <button type="submit" class="btn btn-center btn-success">Submit</button>  
+            </form> 
+            </div>  
+        </div>
+</div>
+</div>
+</div>
+<div class="modal" id="myModal">  
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+      <div class="modal-content">  
+       <!-- Modal body -->  
+         <div class="modal-header text-center">  
+        <h3 class="text-center"><strong>Booking Ticket Confirmed</strong></h3>
+      </div>
+      <div class="modal-body">
+          <table class="table table-bordered table-striped table-responsive">  
+                  <tr>  
+                      <th>Ticket Id</th>  
+                      <th>Show Id</th>  
+                      <th>Start Time</th> 
+                      <th>End Time</th>
+                      <th>Screen Id</th> 
+                      <th>Theatre Id</th>
+                      <th>Movie Id</th>
+                      <th>City</th>
+                      <th>Total Cost</th>
+                      <th>Customer Id</th>
+                  </tr>  
+                  <ng-container>
+                    <tr> 
+                          <td>{{confirmedBooking.id}}</td>
+                          <td>{{confirmedBooking.showId}</td>  
+                          <td>{{confirmedBooking.showId}}</td>  
+                          <td>{{confirmedBooking.showId}}</td>
+                          <td>{{confirmedBooking.showId}}</td>  
+                          <td>{{confirmedBooking.showId}}</td>
+                          <td>{{confirmedBooking.showId}}</td>
+                          <td>{{confirmedBooking.showId}}</td>
+                          <td>{{confirmedBooking.totalCost}}</td>
+                          <td>{{confirmedBooking.customer}}</td>
+                      </tr>  
+                  </ng-container>  
+              </table> 
+              
+         </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+</div>
+</div>
+
+

@@ -1,0 +1,22 @@
+
+<body>
+    <h2>Details of Screens</h2><br>  
+    <div class="panel-body">  
+        <table  class="table table-bordered table-hover table table-striped">        
+            <thead class="thead-light">  
+                <tr>  
+                    <th>Screen Id</th>  
+                    <th>Screen Name</th>  
+                    <th>Theatre Id</th> 
+                </tr>  
+            </thead>  
+            <tbody>  
+                 <tr *ngFor="let s of screens ">  
+                    <td>{{s.id}}</td>  
+                    <td>{{s.name}}</td>  
+                    <td>{{s.theatreId.id}}</td>  
+                 </tr>   
+            </tbody><br>  
+        </table>  
+  </div>  
+  </body> 

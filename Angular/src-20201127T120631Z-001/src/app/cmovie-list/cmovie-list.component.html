@@ -1,0 +1,87 @@
+
+<div class="bg-img">
+    <div class="panel panel-default">  
+    <div class="panel-heading">  
+        <h1 style="text-align: center">Movies</h1><br>  
+
+<div class="panel-body">  
+    <table  class="table table-hover table-sm">
+     
+        <thead class="thead-light">  
+            <tr>  
+                <th>Movie Id</th>  
+                <th>Movie Name</th>  
+                <th>Director</th>  
+                <th>Language</th>  
+                <th>Realease Date</th>  
+                <th>Action</th> 
+
+            </tr>  
+        </thead>  
+        <tbody>  
+             <tr *ngFor="let m of movies ">  
+                <td>{{m.id}}</td>  
+                <td>{{m.name}}</td>  
+                <td>{{m.director}}</td>
+                <td>{{m.language}}</td>
+                <td>{{m.releaseDate}}</td>  
+                <!--<td><button class="btn btn-primary" (click)="selectMovie(m.id)" >Select</button> 
+                    <td><button type="submit" (click)="selectMovie(m.id)" </td>-->
+                <td><button type="submit" (click)="selectMovie(m.id)" class="btn btn-primary active" 
+                    data-toggle="modal" data-target="#myModal">Select</button>
+                </td>  
+              </tr>   
+        </tbody><br>  
+    </table>  
+</div> 
+
+    </div>
+    </div>
+    <div class="modal" id="myModal">  
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+            <div class="modal-content">  
+             <!-- Modal body -->  
+               <div class="modal-header text-center">  
+              <h3 class="text-center"><strong>Show Information</strong></h3>
+            </div>
+            <div class="modal-body">
+                <div class="col-lg-offset-20 col-md-15"> 
+                <table class="table table-bordered table-striped table-responsive">  
+                        <tr>  
+                            <th>Id</th>  
+                            <th>Name</th>  
+                            <th>Start Time</th> 
+                            <th>End Time</th>
+                            <th>Available Seats</th> 
+                            <th>Show Price</th>
+                            <th>Screen Id</th>
+                            <th>Movie Id</th>
+                            <th>Action</th>
+                        </tr>  
+                        <ng-container>   
+                            <tr *ngFor="let show of shows">  
+                                <td>{{show.id}}</td>
+                                <td>{{show.name}}</td>  
+                                <td>{{show.startTime}}</td>  
+                                <td>{{show.endTime}}</td>
+                                <td>{{show.availableSeats}}</td>  
+                                <td>{{show.showPrice}}</td>
+                                <td>{{show.screenId.id}}</td>
+                                <td>{{show.movieId.id}}</td>
+                                <!-- <td><input type="button" value="Book" class="btn btn-primary" (click)="bookMovie(show)"> -->
+                                <td><input type="button" class="btn btn-primary" value="Book" (click)="bookMovie(show)" class="close" data-dismiss="modal" aria-hidden="true"></td>
+                            </tr>  
+                        </ng-container>  
+                    </table> 
+                    </div>
+                    
+               </div>
+            <div class="modal-footer">
+              <!--<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>-->
+              <button type="button" onclick="javascript:window.location.reload()" class="close" data-dismiss="modal" aria-hidden="true">Close</button>
+            </div>
+          </div>
+      
+        </div>
+      </div>
+    </div>  

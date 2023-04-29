@@ -1,0 +1,30 @@
+<body>
+<h2> Theatre to be searched </h2><br>
+      <form (ngSubmit)="searchOneTheatre()">
+        <div class="fourteen">
+        <label>Theatre Id</label>
+        <input type="number" name="TheatreId" placeholder="Enter Theatre Id" [(ngModel)]="tid"  data-placement="right" required minlength="3" required pattern="[1-9][0-9][0-9]"  required #idd="ngModel" class="form-control" >
+        <div *ngIf="idd.invalid && idd.touched" class="alert alert-danger">
+          <div *ngIf="idd.errors.required">Theatre ID is Mandatory</div>
+          <div *ngIf="idd.errors.pattern">Theatre ID can have 3 digits with not 0 at first place</div>
+          </div>
+         </div>
+        <div class="fifteen">
+        <input type="submit" value="Search"  class="btn btn-success">
+        </div>
+        </form><br><br><br>
+         <div class="sixteen">
+         <table  class="table table-bordered table-hover">
+        <tr>
+        <th>TheatreId</th>
+        <th>TheatreName</th>
+        <th>City</th>
+        </tr>
+        <tr>
+        <td>{{findTheatre.id}}</td>
+        <td>{{findTheatre.name}}</td>
+        <td>{{findTheatre.city.id}}</td>
+       </tr>
+       </table>
+        </div>
+</body>

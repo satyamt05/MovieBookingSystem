@@ -1,0 +1,42 @@
+<div class="bg-img">
+
+<div class="panel panel-default">  
+    <div class="panel-heading">  
+        <h1 style="text-align: center">City</h1><br>  
+        <div class="row" [hidden]="!deleteMessage">  
+               
+                  <div class="col-sm-4"></div>  
+                  <div class="col-sm-4">  
+                          <div class="alert alert-info alert-dismissible">  
+                                  <button type="button" class="close" data-dismiss="alert"></button>  
+                                  <strong>City Data Deleted.......</strong>  
+                          </div>  
+                  </div>  
+                  <div class="col-sm-4"></div>  
+          </div>             
+      </div>  
+    
+    <div class="panel-body">  
+        <table  class="table table-hover table-sm">  
+            <thead class="thead-light">  
+                <tr>  
+                    <th>Id</th>  
+                    <th>Name</th> 
+                    <th>Action</th>  
+                      
+                </tr>  
+            </thead>  
+            <tbody>  
+                 <tr *ngFor="let city of cities ">  
+                    <td>{{city.id}}</td>  
+                    <td>{{city.name}}</td>  
+                   
+                    <td><button  class='btn btn-primary' (click)="deleteCity(city.id)">Delete</button>     
+                    </td>  
+                  </tr>   
+            </tbody><br> 
+            <a  routerLink="/add-city" class="nav-link" class="btn btn-primary active" role="button" >Add a city</a>  
+        </table>  
+    </div>  
+  </div>   
+</div>

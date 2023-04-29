@@ -1,0 +1,24 @@
+<body>
+    <h3> Theatre to be deleted </h3> 
+     <div class="row">  
+        <div class="col-sm-4"></div>  
+         <div class="col-sm-4" >  
+          <div style="width: 400px;">  
+           <form (ngSubmit)="deleteTheatre()">
+            <div class="seventeen">
+               <label> Threatre ID</label>
+               <input type="number" name="TheatreId" plceholder="Enter Theatre Id" [(ngModel)]="tid"  data-placement="right"  required minlength="3" class="form-control" required pattern="[1-9][0-9][0-9]" required #idd="ngModel" >
+               <div *ngIf="idd.invalid && idd.touched" class="alert alert-danger">
+                <div *ngIf="idd.errors.required">Theatre ID is Mandatory</div>
+                <div *ngIf="idd.errors.pattern">Theatre ID can have 3 digits with not 0 at first place</div>
+                </div>
+               </div>
+                 <br>
+                <div class="eighteen">
+              <input type="submit" value="Delete" class="btn btn-danger" >
+            </div>
+            </form>
+        </div>
+      </div>
+   </div>
+</body>

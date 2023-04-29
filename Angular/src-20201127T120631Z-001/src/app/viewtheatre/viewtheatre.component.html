@@ -1,0 +1,19 @@
+<body>
+    <h3>Details of Theatres</h3><br><br>
+    <div class="thirteen">
+     <table class="table table-bordered table-hover table table-striped">
+        <tr>
+            <th>TheatreId</th>
+            <th>TheatreName</th>
+            <th>CityId</th>
+        </tr>
+        <tbody>
+            <tr *ngFor="let t of theatres">
+                <td>{{t.id}}</td>
+                <td>{{t.name}}</td>
+                <td>{{t.city.id}}</td>
+            </tr>
+        </tbody>  
+    </table>  
+  </div>
+</body> 
